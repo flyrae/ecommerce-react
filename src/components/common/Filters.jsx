@@ -93,10 +93,12 @@ const Filters = ({ closeModal }) => {
             onChange={onBrandFilterChange}
           >
             <option value="">All Brands</option>
-            <option value="salt">Salt Maalat</option>
-            <option value="betsin">Betsin Maalat</option>
-            <option value="black">Black Kibal</option>
-            <option value="sexbomb">Sexbomb</option>
+            <option value="metal model">航空合金模型</option>
+            <option value="plastic model">航空塑料模型</option>
+            <option value="resin model">航空飞机树脂模型</option>
+            <option value="lego model">航空乐高模型</option>
+            <option value="other model">其他模型</option>
+            <option value="vicinity">周边</option>
           </select>
         )}
       </div>

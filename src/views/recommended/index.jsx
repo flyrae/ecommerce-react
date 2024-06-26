@@ -1,11 +1,11 @@
 import { MessageDisplay } from '@/components/common';
 import { ProductShowcaseGrid } from '@/components/product';
 import { useDocumentTitle, useRecommendedProducts, useScrollTop } from '@/hooks';
-import bannerImg from '@/images/banner-girl-1.png';
+import bannerImg from '@/images/banner-tank.jpg';
 import React from 'react';
 
 const RecommendedProducts = () => {
-  useDocumentTitle('Recommended Products | Salinaka');
+  useDocumentTitle('Recommended Products | Odewm');
   useScrollTop();
 
   const {
