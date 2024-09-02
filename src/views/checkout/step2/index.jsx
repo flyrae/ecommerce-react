@@ -5,7 +5,7 @@ import { Boundary } from '@/components/common';
 import { CHECKOUT_STEP_1, CHECKOUT_STEP_3 } from '@/constants/routes';
 import { Form, Formik } from 'formik';
 import { useDocumentTitle, useScrollTop } from '@/hooks';
-import {PropType} from 'prop-types';
+import PropTypes from 'prop-types';
 import {React} from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
@@ -117,20 +117,20 @@ const ShippingDetails = ({ profile, shipping, subtotal }) => {
 };
 
 ShippingDetails.propTypes = {
-  subtotal: PropType.number.isRequired,
-  profile: PropType.shape({
-    fullname: PropType.string,
-    email: PropType.string,
-    address: PropType.string,
-    mobile: PropType.object
+  subtotal: PropTypes.number.isRequired,
+  profile: PropTypes.shape({
+    fullname: PropTypes.string,
+    email: PropTypes.string,
+    address: PropTypes.string,
+    mobile: PropTypes.object
   }).isRequired,
-  shipping: PropType.shape({
-    fullname: PropType.string,
-    email: PropType.string,
-    address: PropType.string,
-    mobile: PropType.object,
-    isInternational: PropType.bool,
-    isDone: PropType.bool
+  shipping: PropTypes.shape({
+    fullname: PropTypes.string,
+    email: PropTypes.string,
+    address: PropTypes.string,
+    mobile: PropTypes.object,
+    isInternational: PropTypes.bool,
+    isDone: PropTypes.bool
   }).isRequired
 };
 
