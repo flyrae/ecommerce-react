@@ -4,7 +4,7 @@ import { CHECKOUT_STEP_1 } from '@/constants/routes';
 import { Form, Formik } from 'formik';
 import { displayActionMessage } from '@/helpers/utils';
 import { useDocumentTitle, useScrollTop } from '@/hooks';
-import PropType from 'prop-types';
+import PropTypes from 'prop-types';
 import { Redirect } from 'react-router-dom';
 import * as Yup from 'yup';
 import { StepTracker } from '../components';
@@ -136,18 +136,18 @@ const Payment = ({ shipping, payment, subtotal }) => {
 };
 
 Payment.propTypes = {
-  shipping: PropType.shape({
-    isDone: PropType.bool,
-    isInternational: PropType.bool
+  shipping: PropTypes.shape({
+    isDone: PropTypes.bool,
+    isInternational: PropTypes.bool
   }).isRequired,
-  payment: PropType.shape({
-    name: PropType.string,
-    cardnumber: PropType.string,
-    expiry: PropType.string,
-    ccv: PropType.string,
-    type: PropType.string
+  payment: PropTypes.shape({
+    name: PropTypes.string,
+    cardnumber: PropTypes.string,
+    expiry: PropTypes.string,
+    ccv: PropTypes.string,
+    type: PropTypes.string
   }).isRequired,
-  subtotal: PropType.number.isRequired
+  subtotal: PropTypes.number.isRequired
 };
 
 export default withCheckout(Payment);
