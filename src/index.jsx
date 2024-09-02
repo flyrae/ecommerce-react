@@ -9,6 +9,7 @@ import '@/styles/style.scss';
 import WebFont from 'webfontloader';
 import App from './App';
 import firebase from '@/services/firebase';
+import { createRoot } from 'react-dom/client';
 
 WebFont.load({
   google: {
@@ -17,10 +18,10 @@ WebFont.load({
 });
 
 const { store, persistor } = configureStore();
-const root = document.getElementById('app');
+const root = createRoot(document.getElementById('app'));
 
 // Render the preloader on initial load
-render(<Preloader />, root);
+root.render(<Preloader />);
 
 firebase.auth.onAuthStateChanged((user) => {
   if (user) {
@@ -29,7 +30,7 @@ firebase.auth.onAuthStateChanged((user) => {
     store.dispatch(onAuthStateFail('Failed to authenticate'));
   }
   // then render the app after checking the auth state
-  render(<App store={store} persistor={persistor} />, root);
+  root.render(<App store={store} persistor={persistor} />);
 });
 
 if (process.env.NODE_ENV === 'production' && 'serviceWorker' in navigator) {
