@@ -65,6 +65,11 @@ const ShippingDetails = ({ profile, shipping, subtotal }) => {
     history.push(CHECKOUT_STEP_3);
   };
 
+  // 添加一个检查，确保所有必要的props都存在
+  if (!profile || !shipping || typeof subtotal !== 'number') {
+    return <div>Loading...</div>; // 或者其他适当的加载状态组件
+  }
+
   return (
     <Boundary>
       <div className="checkout">
@@ -81,10 +86,8 @@ const ShippingDetails = ({ profile, shipping, subtotal }) => {
               <Form>
                 <ShippingForm />
                 <br />
-                {/*  ---- TOTAL --------- */}
                 <ShippingTotal subtotal={subtotal} />
                 <br />
-                {/*  ----- NEXT/PREV BUTTONS --------- */}
                 <div className="checkout-shipping-action">
                   <button
                     className="button button-muted"
